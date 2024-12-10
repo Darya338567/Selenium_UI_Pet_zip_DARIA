@@ -1,3 +1,4 @@
+import time
 from pages.base_page import BasePage
 from pages.locators import LoginPageLockators
 
@@ -8,5 +9,6 @@ class LoginPage(BasePage):
         login_email.send_keys("diva.86@inbox.ru")
         login_password = self.browser.find_element(*LoginPageLockators.LOGIN_PASS)
         login_password.send_keys("Sd338567")
+        time.sleep(2)
         login_button = self.browser.find_element(*LoginPageLockators.LOGIN_BTN)
-        login_button.click()
+        login_button.submit()
